@@ -1,24 +1,39 @@
-<h2 style="text-align: center;">Stage 1/5: Creating models</h2>
+<h2 style="text-align: center;">Stage 2/5: Main menu</h2>
 
 <h2 style="text-align: center;">Description</h2>
 
-<p>The "<em>HyperJob</em>" recruitment agency is a very conservative one. Its history starts on January 1st, 1970 . The managers in the agency prefer communicating by phone or email and searching for employees personally. That was an efficient strategy some ten years ago, but now the candidates prefer to apply for jobs online. The problem is that "<em>HyperJob</em>" still doesn't have a site, so they need you to create the service as soon as possible.</p>
+<p>The users of the service will be managers and candidates. A manager can create vacancies and read the candidate's resume; a candidate can create a resume and view vacancies. Both of them need a way to log in, log out, and see their profile.</p>
 
-<p>We start with a simple site that will be suitable for:</p>
-
-<ul>
-	<li>Creating a new vacancy by the agency's manager</li>
-	<li>Creating a new resume by a candidate</li>
-</ul>
-
-<p>We know that it will be a long road, so at each stage you will make only a small part of work. By the end, we'll have a working site that fulfills all the requirements.</p>
+<p>So many pages to make, but first things first: the menu.</p>
 
 <h2 style="text-align: center;">Objectives</h2>
 
-<p>Your first task is to prepare the models for the data. It's important to keep all the data safe. We need to store all the vacancies and resumes persistently in the database. Create models to manage the database tables.</p>
+<p>The menu will be the main page of the service. This page will have the links to all other pages that the user needs. From the menu, you can go to the vacancies list, resumes list, and personal profile. In the head of the page, there will be a greeting message.</p>
 
-<p><div class="alert alert-primary"> Use the default settings of the project with a predefined <em>SQLite</em> database. </div></p>
+<p>Let's look at a simple design.</p>
 
-<p>Throughout the project, we will need at least two models: <code class="java">Vacancy</code> and <code class="java">Resume</code>. Both of them should have the <code class="java">description</code> and <code class="java">author</code> fields. The <code class="java">description</code> is a text field with no more than 1024 symbols, and the <code class="java">author</code> is a foreign key to <code class="java">django.contrib.auth.models.User</code> model.</p>
+<ol>
+	<li>The menu should contain the <code class="language-html">&lt;h2&gt;</code> element at the top:
 
-<p>Define <code class="java">Vacancy</code> and <code class="java">Resume</code> in <em>models.py </em>module and migrate them to the database. We check your work this time, so that at the next steps you are confident enough to add new models by yourself.</p>
+	<pre><code class="language-html">&lt;h2&gt;Welcome to HyperJob!&lt;/h2&gt;</code></pre>
+	</li>
+	<li>Five links should go next in separate <code class="language-html">&lt;div&gt;</code> elements:
+	<ul>
+		<li>To login page with the <code class="language-html">href</code> attribute equals <code class="language-html">"/login"</code></li>
+		<li>To sign up page with the <code class="language-html">href</code> attribute equals <code class="language-html">"/signup"</code></li>
+		<li>To vacancies list with the <code class="language-html">href</code> attribute equals <code class="language-html">"/vacancies"</code></li>
+		<li>To resumes list with the <code class="language-html">href</code> attribute equals <code class="language-html">"/resumes"</code></li>
+		<li>To personal profile with the <code class="language-html">href</code> attribute equals <code class="language-html">"/home"</code></li>
+	</ul>
+	</li>
+</ol>
+
+<p>If you start the application on your computer with <code class="language-html">python manage.py runserver</code> command, the menu should be available on the address <em>localhost:8000</em>.</p>
+
+<p><div class="alert alert-primary"> If you want to use a custom directory for your templates, add the path to it to the <code class="language-html">TEMPLATE['DIRS']</code> list in the <em>settings.py</em> module. </div></p>
+
+<p>To combine a <a target="_blank" href="https://docs.djangoproject.com/en/2.2/topics/class-based-views/intro/#handling-forms-with-class-based-views" rel="noopener noreferrer nofollow" target="_blank">template with the HTTP handler</a>, you can use the <code class="language-html">django.shortcuts.render</code> function.</p>
+
+<pre><code class="language-python">render(request, template_name)</code></pre>
+
+<p>You don't need to implement the handlers for these pages: you'll do it at the next steps.</p>
