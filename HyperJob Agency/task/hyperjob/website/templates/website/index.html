@@ -6,10 +6,9 @@
 </head>
 <body>
     <h2>Welcome to HyperJob!</h2>
-    <div><a href="/login">Login</a></div>
-    <div><a href="/signup">Sign up</a></div>
-    <div><a href="/vacancies">Vacancies</a></div>
-    <div><a href="/resumes">Resumes</a></div>
-    <div><a href="/home">Home</a></div>
+    <p></p>
+    {% for link, name in menu.items %}
+    <div><a href="/{{link}}">{{name}}</a> </div>
+    {% endfor %}
 </body>
 </html>
