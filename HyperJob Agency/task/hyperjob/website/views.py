@@ -9,7 +9,9 @@ menu = {
     'home': 'Your Profile'
 }
 
+
 # Create your views here.
+
 class IndexView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'website/index.html', context={'menu': menu})
