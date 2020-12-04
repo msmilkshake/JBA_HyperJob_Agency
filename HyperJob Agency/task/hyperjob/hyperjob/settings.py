@@ -25,10 +25,7 @@ SECRET_KEY = '*57#^8!%%x4wi6byh%qj3!&7b)qu5ve7m5tz9&)2^jievj2j1b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -74,6 +71,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'hyperjob.wsgi.application'
+
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = '/'
 
 
 # Database

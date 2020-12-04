@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>HyperJob</title>
 </head>
+
 <body>
     <h2>Welcome to HyperJob!</h2>
-    <p></p>
+    {% if user.is_authenticated %}
+    <form action="logout">
+        <table>
+            <tr>
+                <td><i>Welcome, {{ user.username }}.</i></td>
+                <td><button type="submit">Logout</button></td>
+            </tr>
+        </table>
+    </form>
+    {% else %}
+    <p><i>You're not logged in...</i></p>
+    {% endif %}
+    <hr><br>
     {% for link, name in menu.items %}
-    <div><a href="/{{link}}">{{name}}</a> </div>
+    <div><a href="/{{link}}">{{name}}</a></div>
     {% endfor %}
 </body>
+
 </html>

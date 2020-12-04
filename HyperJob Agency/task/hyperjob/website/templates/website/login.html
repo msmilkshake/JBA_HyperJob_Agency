@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <table bgcolor="#bbeeff">
+        <tr>
+            <td width="20px"></td>
+            <td align="left">
+                <br>
+                <form method="post">{% csrf_token %}
+                    <table>{{ form.as_table }}</table>
+                    <button type="submit">Login</button>
+                </form>
+                <br>
+            </td>
+            <td width="20px"></td>
+        </tr>
+    </table>
+</body>
+
+</html>
