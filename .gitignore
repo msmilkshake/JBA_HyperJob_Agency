@@ -1,5 +1,4 @@
 /HyperJob Agency/Creating models/
-/HyperJob Agency/Creating new vacancies and resumes/
 /HyperJob Agency/Main menu/
 /HyperJob Agency/Vacancies and resumes pages/
 /HyperJob Agency/lesson-info.yaml
@@ -8,3 +7,4 @@
 /venv/
 /course-info.yaml
 /course-remote-info.yaml
+/HyperJob Agency/Authentication/
