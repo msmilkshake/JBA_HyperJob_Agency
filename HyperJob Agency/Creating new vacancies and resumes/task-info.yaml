@@ -1281,6 +1281,18 @@ files:
 
     # Create your tests here.
   learner_created: false
+- name: hyperjob/website/forms.py
+  visible: true
+  learner_created: true
+- name: hyperjob/website/templates/website/profile.html
+  visible: true
+  learner_created: true
+- name: hyperjob/website/templates/website/createform.html
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/94/stages/523/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 05 Dec 2020 04:06:53 UTC
 record: 5

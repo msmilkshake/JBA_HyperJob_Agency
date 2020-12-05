@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% if user.is_authenticated %}
+        {{ user }}'s Profile
+        {% else %}
+        Anonymous User
+        {% endif %}
+    </title>
+</head>
+
+<body>
+    {% if user.is_authenticated %}
+    <h1>{{ user }}'s Profile page</h1>
+    <br>
+    <p>Hello, {{ user }}. You are a
+        {% if user.is_staff %}
+        <b>staff member</b>, so you can create vacancies.
+        {% else %}
+        <b>regular user</b>, so you can create resumes.
+        {% endif %}
+    </p>
+    {% if user.is_authenticated %}
+    {% include "website/createform.html" %}
+    {% endif %}
+    {% else %}
+    <h1>Welcome Anonymous User</h1>
+    <br>
+    <p>Take some time to <a href="/signup">Register</a> an account with us!</p>
+    <p>We may have the "Job of your life" waiting for you in our <a href="/vacancies">vacancies</a>!</p>
+    {% endif %}
+</body>
+
+</html>

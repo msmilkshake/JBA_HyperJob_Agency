@@ -18,7 +18,7 @@ from django.contrib.auth.views import LogoutView
 from django.urls import path
 from django.views.generic import RedirectView
 
-from website.views import IndexView, MySignupView, MyLoginView
+from website.views import IndexView, MySignupView, MyLoginView, ProfileView, NewResume, NewVacancy
 from vacancy.views import VacancyView
 from resume.views import ResumeView
 
@@ -35,4 +35,10 @@ urlpatterns = [
     path('login/', RedirectView.as_view(url='/login')),
     path('logout', LogoutView.as_view()),
     path('logout/', RedirectView.as_view(url='/logout')),
+    path('home', ProfileView.as_view()),
+    path('home/', RedirectView.as_view(url='/home')),
+    path('resume/new', NewResume.as_view()),
+    path('resume/new/', RedirectView.as_view(url='/resume/new')),
+    path('vacancy/new', NewVacancy.as_view()),
+    path('vacancy/new/', RedirectView.as_view(url='/vacancy/new')),
 ]

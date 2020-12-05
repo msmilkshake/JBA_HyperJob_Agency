@@ -1,0 +1,32 @@
+<hr>
+<p>Please, use the form below to create a new
+    {% if user.is_staff %}
+    vacancy.
+    {% else %}
+    resume.
+    {% endif %}
+</p>
+<br>
+<table bgcolor="#ddffee">
+    <tr>
+        <th colspan="2">Create a new
+            {% if user.is_staff %}
+            vacancy:
+            {% else %}
+            resume:
+            {% endif %}
+        </th>
+    </tr>
+    <tr>
+        <th width="20px"></th>
+        <th align="left">
+            <br>
+            <form method="post" action="{{ action }}/new">{% csrf_token %}
+                <table>{{ create_form.as_table }}</table>
+                <button type="submit">Create</button>
+            </form>
+            <br>
+        </th>
+        <th width="20px"></th>
+    </tr>
+</table>
